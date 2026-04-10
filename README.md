@@ -1,83 +1,106 @@
 # Automatic Solar Tracking Drying System for Agricultural Products
 
-A microcontroller-based solar tracking drying system designed to improve drying efficiency for agricultural products by dynamically aligning with solar movement.
+A microcontroller-based automatic solar tracking drying system designed to improve drying efficiency for agricultural products by dynamically aligning the drying platform toward maximum sunlight.
 
-This system optimizes solar energy utilization using sensor-based tracking and embedded control logic, resulting in improved drying performance and reduced energy loss.
+The system uses dual LDR sensors placed in the front and back to detect light intensity. A threshold-based comparison algorithm determines the direction of maximum illumination, and the drying platform moves accordingly using a differential drive mechanism.
 
-This project resulted in a **published patent** in sustainable agritech.
+This project resulted in a published patent in sustainable agricultural technology.
 
 ---
 
-## 🚀 Features
+## Key Features
 
 - Automatic solar tracking
-- Sensor-based feedback control
-- Microcontroller-based control system
-- Energy-efficient drying mechanism
-- Low-cost agritech solution
+- Dual LDR light sensing
+- Threshold-based decision logic
+- Differential drive motion
+- Two rear motor drive system
+- Front castor wheel stabilization
+- Microcontroller-based control
+- Energy-efficient agricultural drying
 - Patent published system
 
 ---
 
-## 🧠 System Overview
+## System Architecture
 
-The system tracks solar movement and adjusts the drying platform angle to maximize sunlight exposure.
+Sensor Layer  
+Two LDR sensors placed at front and back measure sunlight intensity.
 
-### Core Components
+Processing Layer  
+Microcontroller compares sensor values and computes difference.
 
-- Microcontroller
-- Light sensors (LDR array)
-- Motor driver
-- DC motor / Servo
-- Drying chamber
-- Power supply
+Control Layer  
+Motor driver controls two rear motors.
 
----
-
-## ⚙️ Working Principle
-
-1. LDR sensors detect sunlight intensity
-2. Microcontroller compares sensor values
-3. Determines direction of maximum sunlight
-4. Rotates drying platform
-5. Maintains optimal solar alignment
+Mechanical Layer  
+Front castor wheel enables smooth directional movement.
 
 ---
 
-## 🔧 Hardware Components
+## Working Principle
 
-- Microcontroller
-- LDR Sensors
-- Motor Driver
-- DC Motor
-- Drying Chamber
-- Power Supply
+The system reads two LDR values:
+
+Front LDR  
+Back LDR  
+
+The microcontroller computes:
+
+difference = front − back
+
+If:
+
+|difference| < threshold → Stop  
+difference > threshold → Move forward  
+difference < −threshold → Move backward  
+
+The drying platform moves toward the direction with maximum sunlight.
 
 ---
 
-## 🎯 Applications
+## Mechanical Design
 
-- Agricultural drying
-- Solar dehydrator
-- Food preservation
-- Farm-level processing
-- Sustainable agritech
+Front: Castor wheel (free rotation)  
+Rear: Two DC motors (differential drive)  
+
+This allows the platform to move forward/backward to align with sunlight.
 
 ---
 
-## 🏆 Achievement
+## Hardware Components
 
-Published Patent:
+Microcontroller  
+LDR Sensor (Front)  
+LDR Sensor (Back)  
+Motor Driver Module  
+Two DC Motors  
+Castor Wheel  
+Drying Platform  
+Power Supply  
+
+---
+
+## Applications
+
+Solar agricultural drying  
+Food dehydration systems  
+Solar-based crop preservation  
+Low-cost agritech drying systems  
+
+---
+
+## Achievement
+
+Published Patent  
 Automatic Solar Tracking Drying System for Agricultural Products
 
-Developed as part of IDEA Lab and IPR Cell collaboration.
-
 ---
 
-## 👨‍💻 Author
+## Author
 
 Noel Varghese George  
-Embedded Systems | Hardware | Agritech
+Embedded Systems | Hardware | Agritech | VLSI (Learning)
 
-LinkedIn: https://linkedin.com/in/noel-varghese-george-a44333328
+LinkedIn: https://linkedin.com/in/noel-varghese-george-a44333328  
 GitHub: https://github.com/Noel01042006
