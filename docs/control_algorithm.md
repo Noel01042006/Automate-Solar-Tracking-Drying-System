@@ -1,17 +1,15 @@
 # Control Algorithm
 
-1. Read LDR left value
-2. Read LDR right value
-3. Calculate difference
-4. Compare with threshold
-5. Rotate motor accordingly
-6. Stop when balanced
+Read front LDR  
+Read back LDR  
 
-Pseudo Code:
+difference = front − back
 
-if abs(left-right) < threshold
-    stop
-else if left > right
-    rotate left
+if abs(difference) < threshold
+    stop motors
+
+else if difference > threshold
+    move forward
+
 else
-    rotate right
+    move backward
